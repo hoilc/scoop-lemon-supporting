@@ -271,6 +271,7 @@ function main()
   $id = @$_REQUEST['fileId'];
   $url = @$_REQUEST['url'];
   $pass = @$_REQUEST['pass'];
+  $dl = @$_REQUEST['dl'];
 
   if (empty($url) && empty($id)) {
     return [
@@ -299,11 +300,15 @@ function main()
   $status = check_status($pageInfo, $pass);
 
   if ($status['code'] === 200) {
+    $fileInfo = fileInfo($pageInfo);
+    if($dl === '1'){
+        header("Location:{$fileInfo['fileUrl']}");
+    }
     //单文件
     return [
       'code' => 200,
       'data' => [
-        fileInfo($pageInfo)
+        $fileInfo
       ]
     ];
   } else if ($status['code'] === 203) {
