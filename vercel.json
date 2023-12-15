@@ -4,6 +4,9 @@
 		"destination": "https://github.com/hoilc/scoop-lemon"
 	}],
 	"rewrites": [{
+		"source": "/lanzou",
+		"destination": "/api/lanzou/index.php"
+	}, {
 		"source": "/:path*",
 		"destination": "/api/:path*"
 	}],
