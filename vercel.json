@@ -1,13 +1,18 @@
 {
-    "redirects": [{
-        "source": "/",
-        "destination": "https://github.com/hoilc/scoop-lemon"
-    }],
-    "rewrites": [{
-        "source": "/:path*",
-        "destination": "/api/:path*"
-    }],
-    "github": {
-            "silent": true
-      }
+	"redirects": [{
+		"source": "/",
+		"destination": "https://github.com/hoilc/scoop-lemon"
+	}],
+	"rewrites": [{
+		"source": "/:path*",
+		"destination": "/api/:path*"
+	}],
+	"github": {
+		"silent": true
+	},
+	"functions": {
+		"api/lanzou/index.php": {
+			"runtime": "vercel-php@0.5.2"
+		}
+	}
 }
